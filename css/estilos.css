@@ -1,0 +1,820 @@
+/* =========================================================
+UMSA SOMOS TODOS
+Tienda Universitaria
+Diseño fluido y semántico
+
+RESTRICCIONES:
+
+* Sin JavaScript
+* Sin Flexbox
+* Sin CSS Grid
+* Sin Media Queries
+* Sin formularios
+  ========================================================= */
+
+/* =========================================================
+CONFIGURACIÓN GENERAL
+========================================================= */
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+font-size: 100%;
+}
+
+body {
+margin: 0;
+background-color: #f3f5f7;
+color: #17202a;
+font-family: Arial, Helvetica, sans-serif;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+img,
+video {
+display: block;
+max-width: 100%;
+height: auto;
+}
+
+a {
+color: inherit;
+}
+
+/* =========================================================
+CABECERA
+========================================================= */
+
+.cabecera {
+background-color: #071f3a;
+color: #ffffff;
+border-bottom: 5px solid #d9a514;
+}
+
+.encabezado-principal {
+width: min(92%, 1180px);
+margin: 0 auto;
+padding: clamp(2rem, 6vw, 5rem) 0;
+}
+
+.sigla {
+display: inline-block;
+vertical-align: middle;
+width: clamp(5rem, 12vw, 8rem);
+height: clamp(5rem, 12vw, 8rem);
+margin: 0 clamp(1rem, 4vw, 3rem) 0 0;
+padding-top: clamp(1.3rem, 3vw, 2rem);
+
+```
+border: 3px solid #d9a514;
+border-radius: 50%;
+
+color: #d9a514;
+font-size: clamp(1.4rem, 4vw, 2.3rem);
+font-weight: 900;
+text-align: center;
+letter-spacing: 0.08em;
+```
+
+}
+
+.identidad {
+display: inline-block;
+vertical-align: middle;
+width: min(70%, 700px);
+}
+
+.universidad {
+margin: 0 0 0.4rem;
+
+```
+color: #bfcbd8;
+font-size: clamp(0.8rem, 1.8vw, 1rem);
+letter-spacing: 0.08em;
+text-transform: uppercase;
+```
+
+}
+
+.identidad h1 {
+margin: 0;
+
+```
+color: #ffffff;
+font-size: clamp(2rem, 6vw, 4.8rem);
+line-height: 1;
+letter-spacing: -0.04em;
+```
+
+}
+
+.descripcion-corta {
+margin: 1rem 0 0;
+
+```
+color: #d9a514;
+font-size: clamp(1rem, 2vw, 1.3rem);
+font-weight: bold;
+```
+
+}
+
+/* =========================================================
+NAVEGACIÓN
+========================================================= */
+
+.navegacion {
+width: min(92%, 1180px);
+margin: 0 auto;
+padding: 0 0 clamp(1rem, 3vw, 2rem);
+}
+
+.navegacion a {
+display: inline-block;
+
+```
+margin: 0.25rem 0.5rem 0.25rem 0;
+padding: 0.6rem 1rem;
+
+border: 1px solid #4f6680;
+border-radius: 2rem;
+
+color: #ffffff;
+font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+text-decoration: none;
+
+transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+```
+
+}
+
+.navegacion a:hover,
+.navegacion a:focus {
+background-color: #d9a514;
+color: #071f3a;
+outline: none;
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.hero {
+width: min(92%, 1180px);
+margin: 0 auto;
+padding: clamp(4rem, 10vw, 9rem) 0;
+}
+
+.etiqueta {
+margin: 0 0 1rem;
+
+```
+color: #a87800;
+font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+font-weight: 900;
+letter-spacing: 0.15em;
+```
+
+}
+
+.hero h2 {
+max-width: 20ch;
+margin: 0;
+
+```
+color: #071f3a;
+font-size: clamp(2.1rem, 6vw, 5rem);
+line-height: 1.05;
+letter-spacing: -0.04em;
+```
+
+}
+
+.hero > p:not(.etiqueta):not(.frase) {
+max-width: 72ch;
+margin-top: clamp(1.5rem, 4vw, 2.5rem);
+
+```
+font-size: clamp(1rem, 2vw, 1.25rem);
+```
+
+}
+
+.frase {
+display: inline-block;
+
+```
+margin-top: 1.5rem;
+padding: 0.8rem 1rem;
+
+border-left: 5px solid #d9a514;
+
+background-color: #ffffff;
+color: #071f3a;
+
+font-weight: bold;
+```
+
+}
+
+/* =========================================================
+SECCIONES
+========================================================= */
+
+.seccion {
+width: min(92%, 1180px);
+margin: 0 auto;
+padding: clamp(3rem, 8vw, 7rem) 0;
+
+```
+border-top: 1px solid #ccd3da;
+```
+
+}
+
+.titulo-seccion {
+margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.numero-seccion {
+display: inline-block;
+margin: 0 1rem 0 0;
+
+```
+color: #d9a514;
+font-size: 0.85rem;
+font-weight: 900;
+vertical-align: middle;
+```
+
+}
+
+.titulo-seccion h2 {
+display: inline-block;
+
+```
+max-width: 85%;
+margin: 0;
+
+color: #071f3a;
+font-size: clamp(1.8rem, 4vw, 3.3rem);
+line-height: 1.1;
+vertical-align: middle;
+```
+
+}
+
+/* =========================================================
+BLOQUES DE TEXTO
+========================================================= */
+
+.bloque-texto {
+display: inline-block;
+vertical-align: top;
+
+```
+width: 65%;
+margin-right: 4%;
+```
+
+}
+
+.bloque-texto h3,
+.bloque-dato h3,
+.ubicacion h3 {
+margin-top: 0;
+
+```
+color: #071f3a;
+font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+```
+
+}
+
+.bloque-texto p {
+max-width: 70ch;
+}
+
+.bloque-dato {
+display: inline-block;
+vertical-align: top;
+
+```
+width: 28%;
+padding: clamp(1.3rem, 3vw, 2rem);
+
+background-color: #071f3a;
+color: #ffffff;
+
+border-top: 5px solid #d9a514;
+```
+
+}
+
+.bloque-dato h3 {
+color: #d9a514;
+}
+
+/* =========================================================
+PRODUCTOS
+========================================================= */
+
+.productos {
+background-color: #f3f5f7;
+}
+
+.introduccion {
+max-width: 70ch;
+margin-bottom: 2rem;
+}
+
+.producto {
+display: inline-block;
+vertical-align: top;
+
+```
+width: calc(25% - 1.2rem);
+min-height: 500px;
+
+margin: 0.5rem 1rem 0.5rem 0;
+padding: clamp(1rem, 2.5vw, 1.6rem);
+
+background-color: #ffffff;
+
+border: 1px solid #d9e0e6;
+border-top: 5px solid #071f3a;
+
+box-shadow: 0 8px 25px rgba(7, 31, 58, 0.08);
+
+transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+```
+
+}
+
+.producto:nth-of-type(4n) {
+margin-right: 0;
+}
+
+.producto:hover {
+transform: translateY(-5px);
+border-top-color: #d9a514;
+}
+
+/* =========================================================
+IMÁGENES DE PRODUCTOS
+========================================================= */
+
+.imagen-producto {
+margin: 0 0 1.3rem;
+padding: 0;
+}
+
+.imagen-producto img {
+width: 100%;
+height: clamp(160px, 18vw, 220px);
+
+```
+object-fit: cover;
+
+border-radius: 4px;
+
+background-color: #e7ebef;
+```
+
+}
+
+.imagen-producto figcaption {
+margin-top: 0.5rem;
+
+```
+color: #6b7782;
+font-size: 0.75rem;
+text-align: center;
+```
+
+}
+
+.producto-simple {
+min-height: 300px;
+}
+
+.icono-producto {
+margin: 0 0 1rem;
+
+```
+color: #d9a514;
+font-size: 0.8rem;
+font-weight: 900;
+```
+
+}
+
+.producto h3 {
+margin: 0 0 1rem;
+
+```
+color: #071f3a;
+font-size: clamp(1.2rem, 2vw, 1.5rem);
+```
+
+}
+
+.producto p {
+font-size: 0.95rem;
+}
+
+.categoria {
+margin-top: 1.5rem;
+padding-top: 1rem;
+
+```
+border-top: 1px solid #e1e5e9;
+
+color: #5a6570;
+font-size: 0.8rem !important;
+```
+
+}
+
+/* =========================================================
+VIDEO
+========================================================= */
+
+.seccion-video {
+background-color: #071f3a;
+color: #ffffff;
+}
+
+.seccion-video .titulo-seccion h2 {
+color: #ffffff;
+}
+
+.video-contenido {
+width: min(100%, 950px);
+margin: 0 auto;
+}
+
+.video-contenido h3 {
+margin: 0 0 1rem;
+
+```
+color: #d9a514;
+font-size: clamp(1.5rem, 3vw, 2.4rem);
+```
+
+}
+
+.video-contenido > p:not(.etiqueta) {
+max-width: 70ch;
+margin-bottom: 2rem;
+
+```
+color: #d4dde6;
+```
+
+}
+
+.video-contenido video {
+width: 100%;
+max-height: 650px;
+
+```
+background-color: #000000;
+
+border: 4px solid #d9a514;
+border-radius: 4px;
+```
+
+}
+
+/* =========================================================
+PRODUCCIÓN
+========================================================= */
+
+.produccion {
+background-color: #e9edf1;
+}
+
+.destacado {
+display: inline-block;
+vertical-align: top;
+
+```
+width: 28%;
+padding: clamp(1.5rem, 4vw, 3rem);
+
+background-color: #071f3a;
+color: #ffffff;
+
+border-radius: 0 30px 0 30px;
+```
+
+}
+
+.destacado p {
+margin: 0;
+}
+
+.dato-grande {
+color: #d9a514;
+
+```
+font-size: clamp(3rem, 7vw, 5rem);
+font-weight: 900;
+line-height: 1;
+```
+
+}
+
+/* =========================================================
+LISTA SEMÁNTICA
+========================================================= */
+
+.lista-conceptos {
+max-width: 850px;
+margin: 2rem 0 0;
+}
+
+.lista-conceptos dt {
+margin-top: 1.5rem;
+padding-left: 1rem;
+
+```
+border-left: 4px solid #d9a514;
+
+color: #071f3a;
+font-size: 1.1rem;
+font-weight: 900;
+```
+
+}
+
+.lista-conceptos dd {
+margin: 0.4rem 0 0 1.2rem;
+
+```
+color: #4c5965;
+```
+
+}
+
+/* =========================================================
+DETAILS
+========================================================= */
+
+.preguntas details {
+margin: 0.8rem 0;
+padding: 0;
+
+```
+background-color: #ffffff;
+
+border: 1px solid #d6dde4;
+```
+
+}
+
+.preguntas summary {
+padding: clamp(1rem, 2.5vw, 1.5rem);
+
+```
+color: #071f3a;
+
+cursor: pointer;
+font-weight: 900;
+list-style-position: inside;
+```
+
+}
+
+.preguntas summary:hover,
+.preguntas summary:focus {
+background-color: #f0f3f6;
+}
+
+.preguntas details[open] {
+border-color: #d9a514;
+
+```
+box-shadow: 0 8px 20px rgba(7, 31, 58, 0.08);
+```
+
+}
+
+.preguntas details[open] summary {
+background-color: #071f3a;
+color: #ffffff;
+}
+
+.preguntas details p {
+margin: 0;
+padding: 0 clamp(1rem, 3vw, 2rem) 1.5rem;
+
+```
+color: #414d58;
+```
+
+}
+
+/* =========================================================
+UBICACIÓN
+========================================================= */
+
+.informacion {
+background-color: #ffffff;
+}
+
+.ubicacion {
+display: inline-block;
+vertical-align: top;
+
+```
+width: min(100%, 650px);
+padding: clamp(1.5rem, 4vw, 3rem);
+
+background-color: #071f3a;
+color: #ffffff;
+
+border-left: 6px solid #d9a514;
+```
+
+}
+
+.ubicacion h3 {
+color: #ffffff;
+}
+
+.ubicacion address {
+margin: 1.5rem 0;
+
+```
+color: #dce4ec;
+font-style: normal;
+```
+
+}
+
+/* =========================================================
+CIERRE
+========================================================= */
+
+.cierre {
+padding: clamp(4rem, 10vw, 9rem) 4%;
+
+```
+background-color: #d9a514;
+color: #071f3a;
+
+text-align: center;
+```
+
+}
+
+.cierre .etiqueta {
+color: #071f3a;
+}
+
+.cierre h2 {
+max-width: 15ch;
+margin: 0 auto;
+
+```
+font-size: clamp(2.5rem, 7vw, 6rem);
+line-height: 0.95;
+letter-spacing: -0.05em;
+```
+
+}
+
+.cierre p:last-child {
+max-width: 60ch;
+margin: 2rem auto 0;
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+.pie {
+background-color: #041426;
+color: #bfcbd8;
+}
+
+.pie-contenido {
+width: min(92%, 1180px);
+margin: 0 auto;
+padding: clamp(3rem, 7vw, 5rem) 0;
+}
+
+.pie-contenido article {
+display: inline-block;
+vertical-align: top;
+
+```
+width: 31%;
+margin-right: 2%;
+```
+
+}
+
+.pie-contenido article:last-child {
+margin-right: 0;
+}
+
+.pie-contenido h2 {
+color: #ffffff;
+font-size: 1rem;
+}
+
+.pie-titulo {
+margin: 0;
+
+```
+color: #d9a514;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 900;
+```
+
+}
+
+.copyright {
+margin: 0;
+padding: 1rem 4%;
+
+```
+border-top: 1px solid #263b50;
+
+color: #8192a4;
+font-size: 0.8rem;
+text-align: center;
+```
+
+}
+
+/* =========================================================
+ACCESIBILIDAD
+========================================================= */
+
+a:focus,
+summary:focus {
+outline: 3px solid #d9a514;
+outline-offset: 3px;
+}
+
+::selection {
+background-color: #d9a514;
+color: #071f3a;
+}
+
+/* =========================================================
+FLUIDEZ DEL CONTENIDO
+========================================================= */
+
+.encabezado-principal,
+.navegacion,
+.hero,
+.seccion,
+.pie-contenido {
+overflow-wrap: break-word;
+}
+
+/* Evita que elementos multimedia provoquen
+desbordamiento horizontal */
+
+video,
+img {
+max-width: 100%;
+}
+
+/* =========================================================
+SOPORTE PARA PANTALLAS MUY PEQUEÑAS
+SIN UTILIZAR @media
+========================================================= */
+
+@supports (width: min(100%, 1px)) {
+
+```
+.identidad {
+    width: min(70%, 750px);
+}
+
+.bloque-texto {
+    width: min(65%, 750px);
+}
+
+.ubicacion {
+    width: min(100%, 650px);
+}
+```
+
+}
