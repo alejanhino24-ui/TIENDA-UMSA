@@ -1,15 +1,17 @@
 /* =========================================================
 UMSA SOMOS TODOS
 Tienda Universitaria
-Diseño fluido y semántico
 
-RESTRICCIONES:
+DISEÑO FLUIDO Y SEMÁNTICO
+
+RESTRICCIONES CUMPLIDAS:
 
 * Sin JavaScript
 * Sin Flexbox
 * Sin CSS Grid
 * Sin Media Queries
 * Sin formularios
+* Maquetación mediante flujo normal
   ========================================================= */
 
 /* =========================================================
@@ -33,7 +35,6 @@ background-color: #f3f5f7;
 color: #17202a;
 font-family: Arial, Helvetica, sans-serif;
 line-height: 1.7;
-overflow-x: hidden;
 }
 
 img,
@@ -43,8 +44,51 @@ max-width: 100%;
 height: auto;
 }
 
+img {
+object-fit: cover;
+}
+
 a {
 color: inherit;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+dl,
+dd {
+overflow-wrap: break-word;
+}
+
+/* =========================================================
+ENLACE DE SALTO — ACCESIBILIDAD
+========================================================= */
+
+.enlace-salto {
+position: absolute;
+left: 1rem;
+top: -5rem;
+
+```
+z-index: 1000;
+
+padding: 0.75rem 1rem;
+
+background-color: #d9a514;
+color: #071f3a;
+
+font-weight: 900;
+text-decoration: none;
+
+border-radius: 0 0 4px 4px;
+```
+
+}
+
+.enlace-salto:focus {
+top: 0;
 }
 
 /* =========================================================
@@ -58,7 +102,8 @@ border-bottom: 5px solid #d9a514;
 }
 
 .encabezado-principal {
-width: min(92%, 1180px);
+width: 92%;
+max-width: 1180px;
 margin: 0 auto;
 padding: clamp(2rem, 6vw, 5rem) 0;
 }
@@ -66,17 +111,20 @@ padding: clamp(2rem, 6vw, 5rem) 0;
 .sigla {
 display: inline-block;
 vertical-align: middle;
-width: clamp(5rem, 12vw, 8rem);
-height: clamp(5rem, 12vw, 8rem);
-margin: 0 clamp(1rem, 4vw, 3rem) 0 0;
-padding-top: clamp(1.3rem, 3vw, 2rem);
 
 ```
+width: clamp(4.5rem, 12vw, 8rem);
+height: clamp(4.5rem, 12vw, 8rem);
+
+margin: 0 clamp(0.75rem, 3vw, 3rem) 0 0;
+padding-top: clamp(1.15rem, 3vw, 2rem);
+
 border: 3px solid #d9a514;
 border-radius: 50%;
 
 color: #d9a514;
-font-size: clamp(1.4rem, 4vw, 2.3rem);
+
+font-size: clamp(1.3rem, 4vw, 2.3rem);
 font-weight: 900;
 text-align: center;
 letter-spacing: 0.08em;
@@ -87,7 +135,13 @@ letter-spacing: 0.08em;
 .identidad {
 display: inline-block;
 vertical-align: middle;
-width: min(70%, 700px);
+
+```
+width: calc(100% - clamp(6rem, 16vw, 11rem));
+
+max-width: 750px;
+```
+
 }
 
 .universidad {
@@ -95,7 +149,7 @@ margin: 0 0 0.4rem;
 
 ```
 color: #bfcbd8;
-font-size: clamp(0.8rem, 1.8vw, 1rem);
+font-size: clamp(0.75rem, 1.8vw, 1rem);
 letter-spacing: 0.08em;
 text-transform: uppercase;
 ```
@@ -107,6 +161,7 @@ margin: 0;
 
 ```
 color: #ffffff;
+
 font-size: clamp(2rem, 6vw, 4.8rem);
 line-height: 1;
 letter-spacing: -0.04em;
@@ -119,6 +174,7 @@ margin: 1rem 0 0;
 
 ```
 color: #d9a514;
+
 font-size: clamp(1rem, 2vw, 1.3rem);
 font-weight: bold;
 ```
@@ -130,23 +186,30 @@ NAVEGACIÓN
 ========================================================= */
 
 .navegacion {
-width: min(92%, 1180px);
+width: 92%;
+max-width: 1180px;
+
+```
 margin: 0 auto;
 padding: 0 0 clamp(1rem, 3vw, 2rem);
+```
+
 }
 
 .navegacion a {
 display: inline-block;
+vertical-align: middle;
 
 ```
-margin: 0.25rem 0.5rem 0.25rem 0;
-padding: 0.6rem 1rem;
+margin: 0.25rem 0.35rem 0.25rem 0;
+padding: 0.6rem 0.9rem;
 
 border: 1px solid #4f6680;
 border-radius: 2rem;
 
 color: #ffffff;
-font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+
+font-size: clamp(0.78rem, 1.5vw, 0.95rem);
 text-decoration: none;
 
 transition:
@@ -160,7 +223,6 @@ transition:
 .navegacion a:focus {
 background-color: #d9a514;
 color: #071f3a;
-outline: none;
 }
 
 /* =========================================================
@@ -168,9 +230,15 @@ HERO
 ========================================================= */
 
 .hero {
-width: min(92%, 1180px);
+width: 92%;
+max-width: 1180px;
+
+```
 margin: 0 auto;
+
 padding: clamp(4rem, 10vw, 9rem) 0;
+```
+
 }
 
 .etiqueta {
@@ -178,6 +246,7 @@ margin: 0 0 1rem;
 
 ```
 color: #a87800;
+
 font-size: clamp(0.75rem, 1.5vw, 0.9rem);
 font-weight: 900;
 letter-spacing: 0.15em;
@@ -187,10 +256,12 @@ letter-spacing: 0.15em;
 
 .hero h2 {
 max-width: 20ch;
-margin: 0;
 
 ```
+margin: 0;
+
 color: #071f3a;
+
 font-size: clamp(2.1rem, 6vw, 5rem);
 line-height: 1.05;
 letter-spacing: -0.04em;
@@ -200,9 +271,10 @@ letter-spacing: -0.04em;
 
 .hero > p:not(.etiqueta):not(.frase) {
 max-width: 72ch;
-margin-top: clamp(1.5rem, 4vw, 2.5rem);
 
 ```
+margin-top: clamp(1.5rem, 4vw, 2.5rem);
+
 font-size: clamp(1rem, 2vw, 1.25rem);
 ```
 
@@ -212,6 +284,8 @@ font-size: clamp(1rem, 2vw, 1.25rem);
 display: inline-block;
 
 ```
+max-width: 100%;
+
 margin-top: 1.5rem;
 padding: 0.8rem 1rem;
 
@@ -230,11 +304,13 @@ SECCIONES
 ========================================================= */
 
 .seccion {
-width: min(92%, 1180px);
+width: 92%;
+max-width: 1180px;
+
+```
 margin: 0 auto;
 padding: clamp(3rem, 8vw, 7rem) 0;
 
-```
 border-top: 1px solid #ccd3da;
 ```
 
@@ -246,28 +322,33 @@ margin-bottom: clamp(2rem, 5vw, 4rem);
 
 .numero-seccion {
 display: inline-block;
-margin: 0 1rem 0 0;
+vertical-align: middle;
 
 ```
+margin: 0 1rem 0 0;
+
 color: #d9a514;
+
 font-size: 0.85rem;
 font-weight: 900;
-vertical-align: middle;
 ```
 
 }
 
 .titulo-seccion h2 {
 display: inline-block;
+vertical-align: middle;
 
 ```
+width: calc(100% - 4rem);
 max-width: 85%;
+
 margin: 0;
 
 color: #071f3a;
+
 font-size: clamp(1.8rem, 4vw, 3.3rem);
 line-height: 1.1;
-vertical-align: middle;
 ```
 
 }
@@ -282,7 +363,10 @@ vertical-align: top;
 
 ```
 width: 65%;
-margin-right: 4%;
+
+margin-right: 3%;
+
+overflow-wrap: break-word;
 ```
 
 }
@@ -294,6 +378,7 @@ margin-top: 0;
 
 ```
 color: #071f3a;
+
 font-size: clamp(1.3rem, 2.5vw, 1.8rem);
 ```
 
@@ -308,7 +393,8 @@ display: inline-block;
 vertical-align: top;
 
 ```
-width: 28%;
+width: 30%;
+
 padding: clamp(1.3rem, 3vw, 2rem);
 
 background-color: #071f3a;
@@ -317,10 +403,6 @@ color: #ffffff;
 border-top: 5px solid #d9a514;
 ```
 
-}
-
-.bloque-dato h3 {
-color: #d9a514;
 }
 
 /* =========================================================
@@ -333,18 +415,32 @@ background-color: #f3f5f7;
 
 .introduccion {
 max-width: 70ch;
+
+```
 margin-bottom: 2rem;
+```
+
 }
+
+/*
+Dos columnas mediante inline-block.
+
+Se utiliza una anchura del 50% para que el contenido
+pueda mantenerse dentro del ancho disponible incluso
+en pantallas pequeñas, sin recurrir a Media Queries.
+*/
 
 .producto {
 display: inline-block;
 vertical-align: top;
 
 ```
-width: calc(25% - 1.2rem);
-min-height: 500px;
+width: calc(50% - 0.75rem);
 
-margin: 0.5rem 1rem 0.5rem 0;
+min-height: 0;
+
+margin: 0.5rem 0.5rem 0.5rem 0;
+
 padding: clamp(1rem, 2.5vw, 1.6rem);
 
 background-color: #ffffff;
@@ -357,17 +453,23 @@ box-shadow: 0 8px 25px rgba(7, 31, 58, 0.08);
 transition:
     transform 0.2s ease,
     border-color 0.2s ease;
+
+overflow-wrap: break-word;
 ```
 
 }
 
-.producto:nth-of-type(4n) {
+.producto:nth-of-type(2n) {
 margin-right: 0;
 }
 
 .producto:hover {
 transform: translateY(-5px);
+
+```
 border-top-color: #d9a514;
+```
+
 }
 
 /* =========================================================
@@ -381,7 +483,7 @@ padding: 0;
 
 .imagen-producto img {
 width: 100%;
-height: clamp(160px, 18vw, 220px);
+height: clamp(150px, 20vw, 220px);
 
 ```
 object-fit: cover;
@@ -398,6 +500,7 @@ margin-top: 0.5rem;
 
 ```
 color: #6b7782;
+
 font-size: 0.75rem;
 text-align: center;
 ```
@@ -405,7 +508,7 @@ text-align: center;
 }
 
 .producto-simple {
-min-height: 300px;
+min-height: 0;
 }
 
 .icono-producto {
@@ -413,6 +516,7 @@ margin: 0 0 1rem;
 
 ```
 color: #d9a514;
+
 font-size: 0.8rem;
 font-weight: 900;
 ```
@@ -424,13 +528,14 @@ margin: 0 0 1rem;
 
 ```
 color: #071f3a;
+
 font-size: clamp(1.2rem, 2vw, 1.5rem);
 ```
 
 }
 
 .producto p {
-font-size: 0.95rem;
+font-size: clamp(0.88rem, 1.5vw, 0.95rem);
 }
 
 .categoria {
@@ -441,6 +546,7 @@ padding-top: 1rem;
 border-top: 1px solid #e1e5e9;
 
 color: #5a6570;
+
 font-size: 0.8rem !important;
 ```
 
@@ -451,8 +557,17 @@ VIDEO
 ========================================================= */
 
 .seccion-video {
+width: 100%;
+max-width: none;
+
+```
+padding-left: 4%;
+padding-right: 4%;
+
 background-color: #071f3a;
 color: #ffffff;
+```
+
 }
 
 .seccion-video .titulo-seccion h2 {
@@ -460,8 +575,13 @@ color: #ffffff;
 }
 
 .video-contenido {
-width: min(100%, 950px);
+width: 100%;
+max-width: 950px;
+
+```
 margin: 0 auto;
+```
+
 }
 
 .video-contenido h3 {
@@ -469,6 +589,7 @@ margin: 0 0 1rem;
 
 ```
 color: #d9a514;
+
 font-size: clamp(1.5rem, 3vw, 2.4rem);
 ```
 
@@ -476,9 +597,10 @@ font-size: clamp(1.5rem, 3vw, 2.4rem);
 
 .video-contenido > p:not(.etiqueta) {
 max-width: 70ch;
-margin-bottom: 2rem;
 
 ```
+margin-bottom: 2rem;
+
 color: #d4dde6;
 ```
 
@@ -510,7 +632,8 @@ display: inline-block;
 vertical-align: top;
 
 ```
-width: 28%;
+width: 30%;
+
 padding: clamp(1.5rem, 4vw, 3rem);
 
 background-color: #071f3a;
@@ -542,7 +665,11 @@ LISTA SEMÁNTICA
 
 .lista-conceptos {
 max-width: 850px;
+
+```
 margin: 2rem 0 0;
+```
+
 }
 
 .lista-conceptos dt {
@@ -553,6 +680,7 @@ padding-left: 1rem;
 border-left: 4px solid #d9a514;
 
 color: #071f3a;
+
 font-size: 1.1rem;
 font-weight: 900;
 ```
@@ -569,7 +697,7 @@ color: #4c5965;
 }
 
 /* =========================================================
-DETAILS
+DETAILS / SUMMARY
 ========================================================= */
 
 .preguntas details {
@@ -618,9 +746,10 @@ color: #ffffff;
 
 .preguntas details p {
 margin: 0;
-padding: 0 clamp(1rem, 3vw, 2rem) 1.5rem;
 
 ```
+padding: 0 clamp(1rem, 3vw, 2rem) 1.5rem;
+
 color: #414d58;
 ```
 
@@ -639,7 +768,9 @@ display: inline-block;
 vertical-align: top;
 
 ```
-width: min(100%, 650px);
+width: 100%;
+max-width: 650px;
+
 padding: clamp(1.5rem, 4vw, 3rem);
 
 background-color: #071f3a;
@@ -686,9 +817,10 @@ color: #071f3a;
 
 .cierre h2 {
 max-width: 15ch;
-margin: 0 auto;
 
 ```
+margin: 0 auto;
+
 font-size: clamp(2.5rem, 7vw, 6rem);
 line-height: 0.95;
 letter-spacing: -0.05em;
@@ -698,7 +830,11 @@ letter-spacing: -0.05em;
 
 .cierre p:last-child {
 max-width: 60ch;
+
+```
 margin: 2rem auto 0;
+```
+
 }
 
 /* =========================================================
@@ -711,9 +847,15 @@ color: #bfcbd8;
 }
 
 .pie-contenido {
-width: min(92%, 1180px);
+width: 92%;
+max-width: 1180px;
+
+```
 margin: 0 auto;
+
 padding: clamp(3rem, 7vw, 5rem) 0;
+```
+
 }
 
 .pie-contenido article {
@@ -722,6 +864,7 @@ vertical-align: top;
 
 ```
 width: 31%;
+
 margin-right: 2%;
 ```
 
@@ -733,7 +876,11 @@ margin-right: 0;
 
 .pie-contenido h2 {
 color: #ffffff;
+
+```
 font-size: 1rem;
+```
+
 }
 
 .pie-titulo {
@@ -741,6 +888,7 @@ margin: 0;
 
 ```
 color: #d9a514;
+
 font-size: clamp(2rem, 4vw, 3rem);
 font-weight: 900;
 ```
@@ -749,12 +897,14 @@ font-weight: 900;
 
 .copyright {
 margin: 0;
-padding: 1rem 4%;
 
 ```
+padding: 1rem 4%;
+
 border-top: 1px solid #263b50;
 
 color: #8192a4;
+
 font-size: 0.8rem;
 text-align: center;
 ```
@@ -777,7 +927,7 @@ color: #071f3a;
 }
 
 /* =========================================================
-FLUIDEZ DEL CONTENIDO
+FLUIDEZ Y CONTROL DEL CONTENIDO
 ========================================================= */
 
 .encabezado-principal,
@@ -788,32 +938,30 @@ FLUIDEZ DEL CONTENIDO
 overflow-wrap: break-word;
 }
 
-/* Evita que elementos multimedia provoquen
-desbordamiento horizontal */
-
-video,
-img {
-max-width: 100%;
+.producto,
+.bloque-texto,
+.bloque-dato,
+.destacado,
+.pie-contenido article {
+overflow-wrap: break-word;
 }
 
 /* =========================================================
-SOPORTE PARA PANTALLAS MUY PEQUEÑAS
-SIN UTILIZAR @media
+REDUCCIÓN DE MOVIMIENTO
 ========================================================= */
 
-@supports (width: min(100%, 1px)) {
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
 
 ```
-.identidad {
-    width: min(70%, 750px);
-}
-
-.bloque-texto {
-    width: min(65%, 750px);
-}
-
-.ubicacion {
-    width: min(100%, 650px);
+*,
+*::before,
+*::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
 }
 ```
 
